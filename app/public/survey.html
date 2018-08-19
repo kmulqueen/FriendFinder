@@ -3,25 +3,272 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Friend Finder Survey</title>
+    <title>FriendFinder</title>
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Chosen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+    <link rel="stylesheet" id="coToolbarStyle" href="chrome-extension://cjabmdjcfcfdmffimndhafhblfmpjdpe/toolbar/styles/placeholder.css"
+        type="text/css">
+    <script type="text/javascript" id="cosymantecbfw_removeToolbar">
+        (function () {
+            var toolbarElement = {},
+                parent = {},
+                interval = 0,
+                retryCount = 0,
+                isRemoved = false;
+            if (window.location.protocol === 'file:') {
+                interval = window.setInterval(function () {
+                    toolbarElement = document.getElementById('coFrameDiv');
+                    if (toolbarElement) {
+                        parent = toolbarElement.parentNode;
+                        if (parent) {
+                            parent.removeChild(toolbarElement);
+                            isRemoved = true;
+                            if (document.body && document.body.style) {
+                                document.body.style.setProperty('margin-top', '0px', 'important');
+                            }
+                        }
+                    }
+                    retryCount += 1;
+                    if (retryCount > 10 || isRemoved) {
+                        window.clearInterval(interval);
+                    }
+                }, 10);
+            }
+        })();
+    </script>
 </head>
 
 <body>
-    <h1>Survey</h1>
+    <div class="container">
+        <h1>Survey</h1>
+        <hr>
+        <h3>About You</h3>
 
-    <form action="">
-        Name
+        <form action="">
+            Name (Required)
+            <br>
+            <input type="text" name="name" id="name" class="form-control" required>
+            <br> Link to Photo (Required)
+            <br>
+            <input type="text" name="photo" id="photo" class="form-control" required>
+            <br>
+            <br>
+            <hr>
+            <h3>Question 1</h3>
+            <h4>You have a strong desire for adventure.</h4>
+            <select name="question1" id="q1" class="chosen-select">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <h3>Question 2</h3>
+            <h4>You would go out of your way to help someone in need.</h4>
+            <select name="question2" id="q2" class="chosen-select">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <h3>Question 3</h3>
+            <h4>Every once in a while, you need some alone time.</h4>
+            <select name="question3" id="q3" class="chosen-select">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <h3>Question 4</h3>
+            <h4>You enjoy cooking.</h4>
+            <select name="question4" id="q4" class="chosen-select">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <h3>Question 5</h3>
+            <h4>You enjoy rollercoasters.</h4>
+            <select name="question5" id="q5" class="chosen-select">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <h3>Question 6</h3>
+            <h4>You enjoy spicy food.</h4>
+            <select name="question6" id="q6" class="chosen-select">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <h3>Question 7</h3>
+            <h4>You'll try anything once.</h4>
+            <select name="question7" id="q7" class="chosen-select">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <h3>Question 8</h3>
+            <h4>You are easily offended.</h4>
+            <select name="question8" id="q8" class="chosen-select">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <h3>Question 9</h3>
+            <h4>You would consider living in a different country.</h4>
+            <select name="question9" id="q9" class="chosen-select">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <h3>Question 10</h3>
+            <h4>The more people in a group, the better.</h4>
+            <select name="question10" id="q10" class="chosen-select">
+                <option value="1">1 (strongly disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (strongly agree)</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" class="btn btn-primary btn-lg btn-block" id="submit" value="Submit">
+        </form>
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="/api/friends">API Friends List</a> |
+                    <a href="https://github.com/kmulqueen/FriendFinder">GitHub Repo</a>
+                </p>
+            </div>
+        </footer>
         <br>
-        <input type="text" name="name">
-        <br> Link to photo
-        <br>
-        <input type="text" name="photo">
-        <br>
-        <br>
-        <input type="submit" value="Submit">
-    </form>
+    </div>
+
+    <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                    <h2 class="modal-title">Best Match</h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="match-name"></h2>
+                    <img src="" alt="" id="match-img">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var submitBtn = $("#submit");
+
+        submitBtn.on("click", function (e) {
+            e.preventDefault();
+            // Form validation
+            function validateForm() {
+                var isValid = true;
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    };
+                });
+
+                $(".chosen-select").each(function () {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    };
+                });
+                return isValid;
+            };
+
+            if (validateForm()) {
+                var personData = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val(),
+                    ]
+                };
+
+                console.log(personData);
+
+                $.post("/api/friends", personData, function (data) {
+                    console.log("new person posted. data.name");
+                
+                    $("#match-name").text(data.matchName);
+                    $("#match-img").attr("src", data.matchPhoto);
+                    $("#results-modal").modal("toggle");
+
+                });
+            } else {
+                alert("Please fill out all of the fields before submitting the survey!");
+            };
+
+
+        });
+    </script>
 </body>
 
 </html>
