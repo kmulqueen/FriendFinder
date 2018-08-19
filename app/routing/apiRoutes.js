@@ -1,6 +1,3 @@
-// * A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
-// * A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic. 
-
 // load data sources
 var friendsData = require("../data/friends");
 
@@ -44,11 +41,11 @@ module.exports = function (app) {
         };
         // After all of those calculations are done, push the new person to the friends array. If you push them to the array beforehand, they will match themselves.
         friendsData.push(newPerson);
-        console.log("==== New Person and Match info:")
-        console.log(newPerson);
-        console.log("Difference: " + totalDifference);       
-        console.log("Match name: " + matchName);
-        console.log("Match photo: " + matchPhoto);
+        // console.log("==== New Person and Match info:")
+        // console.log(newPerson);
+        // console.log("Difference: " + totalDifference);       
+        // console.log("Match name: " + matchName);
+        // console.log("Match photo: " + matchPhoto);
 
         // Send result
         res.json({

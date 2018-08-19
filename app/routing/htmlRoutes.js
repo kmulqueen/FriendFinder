@@ -1,6 +1,3 @@
-// * A GET Route to `/survey` which should display the survey page.
-// * A default, catch-all route that leads to `home.html` which displays the home page. 
-
 // create dependency for path
 const path = require("path");
 const express = require("express");

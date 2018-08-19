@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>FriendFinder</title>
+    <title>Friend Finder</title>
 
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -252,15 +252,12 @@
                     ]
                 };
 
-                console.log(personData);
+                // console.log(personData);
 
                 $.post("/api/friends", personData, function (data) {
-                    console.log("new person posted. data.name");
-                
                     $("#match-name").text(data.matchName);
                     $("#match-img").attr("src", data.matchPhoto);
                     $("#results-modal").modal("toggle");
-
                 });
             } else {
                 alert("Please fill out all of the fields before submitting the survey!");
